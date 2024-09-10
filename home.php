@@ -1,5 +1,6 @@
 <?php
 require 'config/init.php';
+isAuth();
 ?>
 <!DOCTYPE html>
 <html lang="en">

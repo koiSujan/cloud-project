@@ -1,5 +1,7 @@
 <?php
 require 'config/init.php';
+isAuth();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +55,11 @@ require 'config/init.php';
         },
         cover_image:{
           required: true,
-          extension:"png|jpg|jpeg"
+          accept: "image/jpg,image/jpeg,image/png"
+          // extension:"png|jpg|jpeg"
         },
         'images[]':{
-          extension:"png|jpg|jpeg"
+          accept: "image/jpg,image/jpeg,image/png"
         },
         area:{
           required: true,
@@ -84,10 +87,10 @@ require 'config/init.php';
         },
         cover_image:{
           required:"Please upload cover image",
-          extension :"Allowed extension are png, jpg, jpeg"
+          accept :"Allowed extension are png, jpg, jpeg"
         },
         'images[]':{
-          extension:"Allowed extension are png, jpg, jpeg"
+          accept :"Allowed extension are png, jpg, jpeg"
         }
       },
       // Make sure the form is submitted to the destination defined
