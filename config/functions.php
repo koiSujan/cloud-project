@@ -93,3 +93,11 @@ function isAuth(){
 	redirect('../login.php');
 }
 
+function isAdmin(){
+	if(isset($_SESSION['auth_role']) && $_SESSION['auth_role'] == 'admin'){
+		return true;
+	}
+
+	redirect('../home.php');
+}
+

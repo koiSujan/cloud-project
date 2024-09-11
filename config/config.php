@@ -12,6 +12,7 @@ if(session_status() === PHP_SESSION_NONE) {
 
 ob_start();
 
-define("ENV" , "DEV");
+define('SITE_URL', 'http://cloud.local');
 define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT']."/uploads/");
+define('UPLOAD_URL', SITE_URL.'/uploads/');
 define('ALLOWED_IMAGE_EXTENSION', array('jpg','jpeg','png','svg','bmp','gif'));

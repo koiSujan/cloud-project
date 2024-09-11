@@ -22,8 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($row)) {
       // debug($row['password']);
       if (password_verify($password, $row['password'])) {
+        
         $_SESSION['auth_user'] = $row['name'];
         if ($row['role'] == 'admin') {
+          $_SESSION['auth_role'] = 'admin';
           redirect('../admin/index.php');
         } else {
           redirect('../home.php', "success", "Login Suceessful");

@@ -1,8 +1,8 @@
 let menu = document.querySelector('.menu');
 
-document.querySelector('#menu-btn').onclick = () =>{
-   menu.classList.toggle('active');
-}
+// document.querySelector('#menu-btn').onclick = () =>{
+//    menu.classList.toggle('active');
+// }
 
 window.onscroll = () =>{
    menu.classList.remove('active');
@@ -16,6 +16,7 @@ document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
 
 document.querySelectorAll('.view-property .details .thumb .small-images img').forEach(images =>{
    images.onclick = () =>{
+      console.log('it is clicked');
       src = images.getAttribute('src');
       document.querySelector('.view-property .details .thumb .big-image img').src = src;
    }
