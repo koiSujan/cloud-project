@@ -1,5 +1,5 @@
 <?php
-define("ENV", "PROD");
+define("ENV", "DEV");
 if (ENV == 'DEV') {
   define("DB_SERVER", "localhost");
   define("DB_USER", "root");
