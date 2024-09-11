@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $_SESSION['auth_role'] = 'admin';
           redirect('../admin/index.php');
         } else {
-          redirect('../home.php', "success", "Login Suceessful");
+          redirect('../index.php', "success", "Login Suceessful");
         }
       } else {
         redirect('../login.php', "error", "Password doesn't match ");

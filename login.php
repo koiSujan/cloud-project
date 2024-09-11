@@ -1,7 +1,7 @@
 <?php
 require 'config/init.php';
 if (isset($_SESSION['auth_user'])) {
-   redirect('../home.php');
+   redirect('../index.php');
 }
 ?>
 <!DOCTYPE html>

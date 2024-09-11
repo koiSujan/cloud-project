@@ -2,7 +2,7 @@
 
   <nav class="navbar nav-1">
     <section class="flex flx-bewtween">
-      <a href="../home.php" class="logo clr-theme">
+      <a href="../index.php" class="logo clr-theme">
         <?php include 'logo.php' ?>
       </a>
 

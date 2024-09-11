@@ -44,9 +44,9 @@ require '../config/init.php';
       if ($statement->execute()) {
         $rowId = $statement->insert_id;
         saveGalleryImages($rowId);
-        redirect("../home.php", 'success', 'Property Added Successfully');
+        redirect("../index.php", 'success', 'Property Added Successfully');
       } else {
-        redirect("../home.php", 'error', 'Error occured in adding property. Failed to properly execute queries');
+        redirect("../index.php", 'error', 'Error occured in adding property. Failed to properly execute queries');
       }
     } catch (Exception $e) {
       echo "Exception caught: " . $e->getMessage();

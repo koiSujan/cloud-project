@@ -98,6 +98,6 @@ function isAdmin(){
 		return true;
 	}
 
-	redirect('../home.php');
+	redirect('../index.php');
 }
 
