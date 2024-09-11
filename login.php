@@ -36,3 +36,5 @@ if (isset($_SESSION['auth_user'])) {
 </body>
 
 </html>
+<?php include './components/script.php' ?>
+<script src="./js/script.js"></script>

@@ -25,5 +25,5 @@ require 'config/init.php';
 </body>
 
 </html>
-<!-- custom js file link  -->
+<?php include './components/script.php' ?>
 <script src="./js/script.js"></script>

@@ -19,12 +19,14 @@ $statement->bind_param(
 $succ = $statement->execute();
 if (!$succ) {
   redirect('./404.php');
+  die();
 }
 $data = $statement->get_result();
 $row = $data->fetch_assoc();
 
 if (!isset($row)) {
   redirect('./404.php');
+  die();
 }
 
 $statement2 = $connection->prepare("Select * from property_images where property_id=?");
@@ -52,7 +54,7 @@ if ($statement2->execute()) {
     <div class="details">
       <div class="thumb">
         <div class="big-image">
-          <img src="<?php echo UPLOAD_URL . 'cover/' . $row['cover_image'] ?>" alt="">
+          <img alt="COVER_IMAGE" src="<?php echo UPLOAD_URL . 'cover/' . $row['cover_image'] ?>" alt="">
         </div>
         <?php
         if (isset($galleryImages) && count($galleryImages) > 0) {
@@ -127,4 +129,6 @@ if ($statement2->execute()) {
 
 </body>
 </html>
+
+<?php include './components/script.php' ?>
 <script src="./js/script.js"></script>

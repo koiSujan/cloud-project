@@ -31,6 +31,7 @@ isAuth();
 </body>
 
 </html>
+<?php include './components/script.php' ?>
 <script>
   $(function() {
     // Initialize form validation on the registration form.
@@ -101,3 +102,5 @@ isAuth();
     });
   });
 </script>
+
+<script src="./js/script.js"></script>
