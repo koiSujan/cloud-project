@@ -23,10 +23,11 @@ require '../config/init.php';
           $coverImage = $fileName;
         } 
       }
+      $userId = (int)$_SESSION['auth_id'];
       // insert query and bind parameters to the prepared statement
-      $statement = $connection->prepare("Insert into properties(title, address, contact_person_number,owner, price, property_details ,listed_date, bed_no ,bath_no , area , property_type, cover_image) values(? , ? , ? ,? ,? ,? ,? , ? ,? ,?,? ,?)");
+      $statement = $connection->prepare("Insert into properties(title, address, contact_person_number,owner, price, property_details ,listed_date, bed_no ,bath_no , area , property_type, cover_image, user_id) values(? , ? , ? ,? ,? ,? ,? , ? ,? ,?,? ,? ,?)");
       $statement->bind_param(
-        "ssssssssssss",
+        "ssssssssssssi",
         $title,
         $address,
         $contact,
@@ -38,7 +39,8 @@ require '../config/init.php';
         $bathNo,
         $area,
         $propertyType,
-        $coverImage
+        $coverImage,
+        $userId
       );
 
       if ($statement->execute()) {

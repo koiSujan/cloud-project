@@ -46,6 +46,9 @@
                 <span class="d-block">
                   <form action="../core/logout.php" class="logout-form"><a href="#" onClick="document.querySelector('.logout-form').submit()" class="clr-theme">Logout</a></form>
                 </span>
+                <span class="d-block"><a href="../property-post.php">Post Property</a></span>
+                <span class="d-block"><a href="../property-list.php">My Property</a></span>
+
               <?php
               }
               ?>
@@ -55,6 +58,8 @@
               ?>
                 <span class="d-block"><a href="../login.php">Login</a></span>
                 <span class="d-block"><a href="../register.php">Register</a></span>
+                <span class="d-block"><a href="../property-post.php">Post Property</a></span>
+
 
               <?php
               }

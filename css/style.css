@@ -1166,3 +1166,67 @@ section{
  .app-form-group {
    margin: 16px 0;
  }
+
+
+ .theme-btn {
+   color: #fff;
+   background-color: var(--main-color);
+   border-radius: 6px;
+   padding: 10px 20px;
+   font-size: 15px;
+   transition: 0.35s ease;
+   display: inline-block;
+ }
+
+ .theme-btn-alt {
+   background-color: #eee;
+   color: var(--black)
+ }
+
+ .theme-btn-alt:hover {
+   background-color: #dddada !important;
+ }
+
+ .theme-btn-submit {
+   min-width: 200px;
+ }
+
+ .theme-btn:hover {
+   background-color: #378aff;
+ }
+
+
+ .table-action a:hover {
+   background-color: var(--main-color);
+   color: #fff;
+ }
+
+ .app-table {
+   width: 100%;
+   border-collapse: collapse;
+   font-size: 15px;
+   /* border: 1px solid blue; */
+ }
+
+ .app-table thead tr th {
+   border: 1px solid transparent;
+   background-color: #e7eff9;
+ }
+
+ .app-table th,
+ .app-table td {
+   text-align: left;
+   padding: 8px;
+ }
+
+ .flx {
+   display: flex;
+ }
+
+ .flx-ctr {
+   align-items: center;
+ }
+
+ .flx-between{
+   justify-content: space-between;
+ }
