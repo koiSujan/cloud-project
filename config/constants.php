@@ -5,7 +5,7 @@
 // define("DB_NAME" , "real-state");
 
 
-define("ENV", "DEV");
+define("ENV", "PROD");
 if (ENV == 'DEV') {
   define("DB_SERVER", "localhost");
   define("DB_USER", "root");
