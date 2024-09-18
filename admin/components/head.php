@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin | Open Property Finder</title>
+  <title>Admin | Prime Property Realtors</title>
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
     rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.6/css/dataTables.dataTables.min.css">
   <!-- <link rel="stylesheet" href="../css/dashboard.css"> -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -48,6 +49,16 @@
 
     img {
       max-width: 100%;
+    }
+
+    .clr-theme{
+      color:var(--main-color)
+    }
+
+    .clr-theme#account-btn{
+      background:#daedf3;
+      padding:8px 16px;
+      border-radius: 30px;
     }
 
     .flx {
@@ -387,6 +398,29 @@
         padding: 0px;
         border: 0px;
       }
+    }
+
+    .account-menu {
+      display: none;
+      position: relative;
+    }
+
+    .account-menu.active {
+      display: block;
+    }
+
+    .account-inner-menu {
+      background-color: #fff;
+      padding: 10px;
+      position: absolute !important;
+      top: 5px !important;
+      right: 0px !important;
+      border-radius: 6px;
+    }
+
+    .error{
+      color:red;
+      font-size: 12px;
     }
   </style>
 </head>

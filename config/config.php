@@ -12,7 +12,8 @@ if(session_status() === PHP_SESSION_NONE) {
 
 ob_start();
 
-define('SITE_URL', 'http://34.116.79.142');
-define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT']."/uploads/");
+define("ENV" , "DEV");
+define('SITE_URL', "http://real-state.local/");
 define('UPLOAD_URL', SITE_URL.'/uploads/');
+define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT']."/uploads/");
 define('ALLOWED_IMAGE_EXTENSION', array('jpg','jpeg','png','svg','bmp','gif'));

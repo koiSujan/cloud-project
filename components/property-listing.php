@@ -1,6 +1,6 @@
 <?php
 $rows = array();
-$statement = $connection->prepare("Select * from properties order by listed_date desc");
+$statement = $connection->prepare("Select * from properties order by listed_date desc limit 3");
 if ($statement->execute()) {
    $result = $statement->get_result();
    while ($row = $result->fetch_assoc()) {
@@ -11,7 +11,7 @@ if ($statement->execute()) {
 ?>
 <section class="listings">
 
-   <h1 class="heading">All listings</h1>
+   <h1 class="heading">Latest listings</h1>
 
    <div class="box-container">
       <?php
@@ -20,7 +20,7 @@ if ($statement->execute()) {
       ?>
             <div class="box">
                <div class="admin">
-                  <h3>j</h3>
+                  <!-- <h3>j</h3> -->
                   <div>
                      <p><?php echo $data['owner'] ?></p>
                      <span><?php echo $data['listed_date'] ?></span>
@@ -129,7 +129,7 @@ if ($statement->execute()) {
    </div>
 
    <div style="margin-top: 2rem; text-align:center;">
-      <a href="listings.html" class="inline-btn">view all</a>
+      <a href="../properties.php" class="inline-btn">view all</a>
    </div>
 
 </section>

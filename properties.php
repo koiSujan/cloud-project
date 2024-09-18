@@ -6,7 +6,7 @@ require 'config/init.php';
 <?php include './components/head.php' ?>
 
 <body>
-   <?php flash() ?>
+
    <!-- header section starts  -->
    <?php include './components/header.php' ?>
    <!-- header section ends -->
@@ -19,13 +19,12 @@ require 'config/init.php';
 
    <!-- home section ends -->
 
-   <!-- services section starts  -->
-   <?php include './components/services.php' ?>
+  
 
    <!-- services section ends -->
 
    <!-- listings section starts  -->
-   <?php include './components/property-listing.php' ?>
+   <?php include './components/property-all-listing.php' ?>
    <!-- listings section ends -->
 
 

@@ -1,36 +1,74 @@
 <header class="header">
+  <style>
+    .account-menu {
+      display: none;
+      position: relative;
+    }
 
+    .account-menu.active {
+      display: block;
+    }
+
+    .account-inner-menu {
+      background-color: #fff;
+      padding: 10px;
+      position: absolute !important;
+      top: 5px !important;
+      right: 0px !important;
+      border-radius: 6px;
+    }
+  </style>
   <nav class="navbar nav-1">
-    <section class="flex flx-bewtween">
-      <a href="../index.php" class="logo clr-theme">
-        <?php include 'logo.php' ?>
+    <section class="flex">
+      <a href="../" class="logo clr-theme">
+        <?php include './components/logo.php' ?>
       </a>
 
       <ul>
-        <!-- <li><a href="#">About</a></li>
-        <li><a href="#">Property</a></li>
-        <li><a href="#">Contact</a></li> -->
+        <li><a href="../about.php">About</a></li>
+        <li><a href="../properties.php">Property</a></li>
+        <li><a href="../contact.php">Contact</a></li>
+        <li>
+          <a href="#" id="account-btn">
+            <?php
+            if (isset($_SESSION['auth_user'])) {
+              echo "Welcome ! " . $_SESSION['auth_user'];
+            } else {
+              echo "Account";
+            }
+            ?>
+          </a>
+          <div class="account-menu">
+            <div class="account-inner-menu">
+              <?php
+              if (isset($_SESSION['auth_user'])) {
+              ?>
+                <span class="d-block">
+                  <form action="../core/logout.php" class="logout-form"><a href="#" onClick="document.querySelector('.logout-form').submit()" class="clr-theme">Logout</a></form>
+                </span>
+              <?php
+              }
+              ?>
 
-        <?php
-        if (isset($_SESSION['auth_user'])) {
-          echo '
-            <li><a href="#" class="">Welcome !' . $_SESSION['auth_user'] . '</a></li>
-            <li><a href="./property-post.php" class=""><i class="ri-send-plane-line"></i>Post Property</a></li>
-          ';
-        } else {
-          echo "<li><a href='../login.php' class='clr-theme'>Login</a></li>";
-        }
-        ?>
-        <?php
-        if (isset($_SESSION['auth_user'])) {
-        ?>
-          <li>
-            <form action="../core/logout.php" class="logout-form"><a href="#" onClick="document.querySelector('.logout-form').submit()" class="clr-theme"><i class="ri-logout-box-r-line"></i>Logout</a></form>
-          </li>
-        <?php
-        }
-        ?>
+              <?php
+              if (!isset($_SESSION['auth_user'])) {
+              ?>
+                <span class="d-block"><a href="../login.php">Login</a></span>
+                <span class="d-block"><a href="../register.php">Register</a></span>
 
+              <?php
+              }
+              ?>
+
+              <!-- <span class="d-block"><a href="../login.php">Login</a></span>
+              <span class="d-block"><a href="../register.php">Register</a></span>
+              <span class="d-block">
+                <form action="../core/logout.php" class="logout-form"><a href="#" onClick="document.querySelector('.logout-form').submit()" class="clr-theme">
+                    Logout</a></form>
+              </span> -->
+
+            </div>
+          </div>
       </ul>
     </section>
   </nav>

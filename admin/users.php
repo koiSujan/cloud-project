@@ -12,13 +12,12 @@ include './components/head.php'
                 <?php flash() ?>
                 <section class="overview">
                     <div class="flx flx-ctr flx-between">
-                        <h2 class="title-h2">Properties</h2>
-                        <a href="./add-properties.php" class="theme-btn mg-x ">Add Property</a>
+                        <h2 class="title-h2">Users</h2>
                     </div>
                     <div class="app-content">
                         <?php
                         $rows = array();
-                        $statement = $connection->prepare("Select * from properties order by id desc");
+                        $statement = $connection->prepare("Select * from users");
                         if ($statement->execute()) {
                             $result = $statement->get_result();
                             while ($row = $result->fetch_assoc()) {
@@ -28,14 +27,15 @@ include './components/head.php'
                         }
                         ?>
                         <div style="overflow-x:auto;">
-                            <table class="app-table" id="property-table">
+                            <table class="app-table" id="contact-table">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Property Info</th>
-                                        <th>Price</th>
-                                        <th>Contact</th>
-                                        <th>Details</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Phone </th>
+                                        <th>Role </th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -50,46 +50,32 @@ include './components/head.php'
                                                     <div class="p-detail">
                                                         <p class="title">
                                                             <?php
-                                                            echo $data['title']
-                                                            ?>
-                                                        </p>
-                                                        <p class="addr">
-                                                            <?php
-                                                            echo $data['address']
-                                                            ?>
-                                                        </p>
-                                                        <p class="dt">
-                                                            <?php
-                                                            echo 'Listed On: ' . $data['listed_date'];
+                                                            echo $data['name']
                                                             ?>
                                                         </p>
                                                     </div>
                                                 </td>
-                                                <td><?php echo $data['price'] ?></td>
+                                                <td><?php echo $data['email'] ?></td>
                                                 <td>
-                                                    <div class="p-contact">
-                                                        <p><span style="font-weight:600">Owner:</span> <?php echo $data['owner'] ?></p>
-                                                        <p><span style="font-weight:600">Phone</span> <?php echo $data['contact_person_number'] ?></p>
-                                                    </div>
+                                                <?php echo $data['address'] ?>
                                                 </td>
                                                 <td>
-                                                    <div class="p-detail-2">
-                                                        <p>Area: <?php echo $data['area'] ?></p>
-                                                        <p>Bed: <?php echo $data['bed_no'] ?></p>
-                                                        <p>Bathroom: <?php echo $data['bath_no'] ?></p>
-                                                    </div>
+                                                <?php echo $data['phone_number'] ?>
+                                                </td>
+                                                <td>
+                                                <?php echo $data['role'] ?>
                                                 </td>
                                                 <td>
                                                     <div class="table-action">
-                                                        <a target="_blank" href="../property.php/?id=<?php echo $data['id'] ?>" title="View Detail"><i class="ri-eye-line"></i></a>
-                                                        <form id="del-prop-<?php echo $data['id'] ?>" method="post" action="core/delete-properties.php" style="display:inline">
+                                                        <!-- <a target="_blank" href="../property.php/?id=<?php echo $data['id'] ?>" title="View Detail"><i class="ri-eye-line"></i></a> -->
+                                                        <form id="del-prop-<?php echo $data['id'] ?>" method="post" action="core/delete-users.php" style="display:inline">
                                                             <input name="del_id" type="hidden" style="display:none" value="<?php echo $data['id'] ?>">
                                                             <a href="#" onClick="
                                                                 if(window.confirm('Do you want to delete this item ?')){
                                                                     console.log('yes');
                                                                     document.querySelector('#del-prop-<?php echo $data['id'] ?>').submit();
                                                                 }
-                                                            " title="Delete Property"><i class="ri-delete-bin-line"></i></a>
+                                                            " title="Delete User"><i class="ri-delete-bin-line"></i></a>
                                                         </form>
                                                         <!-- <a href="" title="Delete Property"><i class="ri-delete-bin-line"></i></a> -->
                                                     </div>
@@ -113,10 +99,11 @@ include './components/head.php'
 </body>
 
 </html>
+
 <?php include './components/scripts.php' ?>
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#property-table').DataTable();
+        $('#contact-table').DataTable();
     });
 </script>
